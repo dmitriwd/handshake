@@ -34,11 +34,13 @@ router.post("/company/signup", shouldNotBeLoggedIn, (req, res) => {
   } = req.body;
 
   if (!username || !email || !location || !contact) {
+    console.log("HELP?");
     return res.status(400).render("auth/company/signup", {
       errorMessage: "Please provide requiered fields",
     });
   }
   if (password.length < 8) {
+    console.log("PASSORD?");
     return res.status(400).render("auth/company/signup", {
       errorMessage: "Your password needs to be at least 8 characters",
     });
@@ -145,17 +147,17 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
         if (error instanceof mongoose.Error.ValidationError) {
           return res
             .status(400)
-            .render("freelancer/signup", { errorMessage: error.message });
+            .render("auth/freelancer/signup", { errorMessage: error.message });
         }
         if (error.code === 11000) {
-          return res.status(400).render("freelancer/signup", {
+          return res.status(400).render("auth/freelancer/signup", {
             errorMessage:
               "Username need to be unique. THe username you chose is already in used.",
           });
         }
         return res
           .status(500)
-          .render("freelancer/signup", { errorMessage: error.message });
+          .render("auth/freelancer/signup", { errorMessage: error.message });
       });
   });
 });

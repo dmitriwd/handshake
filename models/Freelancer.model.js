@@ -26,18 +26,18 @@ const freelancerSchema = new Schema({
   description: String,
 
   skills: {
-    type: String,
-    enum: [
-      "Junior Front End Developer",
-      "Front End Developer",
-      "Junior Full Stack Developer",
-      "Full Stack Developer",
-      "Back End Developer",
-      "Junior IT Security Engineer",
-      "IT Security Engineer",
-      "Junior UX/UI Designer",
-      "UX/UI Designer",
-    ],
+    type: Array,
+    // enum: [
+    //   "Junior Front End Developer",
+    //   "Front End Developer",
+    //   "Junior Full Stack Developer",
+    //   "Full Stack Developer",
+    //   "Back End Developer",
+    //   "Junior IT Security Engineer",
+    //   "IT Security Engineer",
+    //   "Junior UX/UI Designer",
+    //   "UX/UI Designer",
+    // ],
   },
 
   contact: {
