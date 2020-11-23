@@ -200,7 +200,7 @@ router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
               .render("index", { errorMessage: "Wrong credentials" });
           }
           req.session.freelancer = freelancer;
-          console.log(freelancer);
+          //console.log(freelancer);
           // req.session.user = user._id ! better and safer but in this case we saving the entire user object
           return res.redirect("/freelancerLanding");
         });
