@@ -69,7 +69,7 @@ router.post("/company/signup", shouldNotBeLoggedIn, (req, res) => {
       .then((company) => {
         // binds the user to the session object
         req.session.company = company;
-        res.redirect("/");
+        res.redirect("/companyLanding");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {

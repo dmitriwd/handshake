@@ -1,0 +1,25 @@
+<h1>Hi Login</h1>
+<h3>Freelancers login here:</h3>
+<form action="/auth/freelancer/login" method="POST">
+  <label for="username">username</label>
+  <input type="text" id="username" name="username">
+  <label for="password">password</label>
+  <input type="password" id="password" name="password">
+
+  <button type="submit">Submit</button>
+</form>
+
+
+<h3>Companies login here:</h3>
+<form action="/auth/company/login" method="POST">
+  <label for="username">username</label>
+  <input type="text" id="username" name="username">
+  <label for="password">password</label>
+  <input type="password" id="password" name="password">
+
+  <button type="submit">Submit</button>
+</form>
+
+{{#if errorMessage}}
+<h3 style="color:red">{{errorMessage}}</h3>
+{{/if}}
