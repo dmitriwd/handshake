@@ -4,7 +4,7 @@ const { Schema, model } = require("mongoose");
 const projectSchema = new Schema({
   when: {
     type: Date,
-    default: Date(),
+    default: new Date(),
   },
 
   duration: {

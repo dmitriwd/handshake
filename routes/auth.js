@@ -163,47 +163,46 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
 });
 
 // end of signup of company and freelancer
-
-router.get("/login", shouldNotBeLoggedIn, (req, res) => {
-  res.render("auth/login");
-});
-
-router.post("/login", shouldNotBeLoggedIn, (req, res) => {
+///auth/freelancer/login
+// login freelancer
+router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
+  console.log("Another console.log");
   const { username, password } = req.body;
 
   if (!username) {
-    return res
-      .status(400)
-      .render("login", { errorMessage: "Please provide your username" });
+    return res.status(400).render("index", {
+      errorMessage: "Please provide your username",
+    });
   }
 
   //   * Here we use the same logic as above - either length based parameters or we check the strength of a password
   if (password.length < 8) {
-    return res.status(400).render("login", {
+    return res.status(400).render("index", {
       errorMessage: "Your password needs to be at least 8 characters",
     });
   }
-
-  User.findOne({ username })
-    .then((user) => {
-      if (!user) {
+  console.log("A String in console.log");
+  Freelancer.findOne({ username })
+    .then((freelancer) => {
+      if (!freelancer) {
         return res
           .status(400)
-          .render("login", { errorMessage: "Wrong credentials" });
+          .render("index", { errorMessage: "Wrong credentials" });
       }
 
       bcrypt
-        .compare(password, user.password)
+        .compare(password, freelancer.password)
 
         .then((isSamePassword) => {
           if (!isSamePassword) {
             return res
               .status(400)
-              .render("login", { errorMessage: "Wrong credentials" });
+              .render("index", { errorMessage: "Wrong credentials" });
           }
-          req.session.user = user;
+          req.session.freelancer = freelancer;
+          console.log(freelancer);
           // req.session.user = user._id ! better and safer but in this case we saving the entire user object
-          return res.redirect("/");
+          return res.redirect("/freelancerLanding");
         });
     })
     .catch((err) => {
@@ -214,6 +213,58 @@ router.post("/login", shouldNotBeLoggedIn, (req, res) => {
       // return res.status(500).render("login", { errorMessage: err.message });
     });
 });
+
+// login company
+router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
+  //console.log("Another console.log");
+  const { username, password } = req.body;
+
+  if (!username) {
+    return res.status(400).render("index", {
+      errorMessage: "Please provide your username",
+    });
+  }
+
+  //   * Here we use the same logic as above - either length based parameters or we check the strength of a password
+  if (password.length < 8) {
+    return res.status(400).render("index", {
+      errorMessage: "Your password needs to be at least 8 characters",
+    });
+  }
+  console.log("A String in console.log");
+  Company.findOne({ username })
+    .then((company) => {
+      if (!company) {
+        return res
+          .status(400)
+          .render("index", { errorMessage: "Wrong credentials" });
+      }
+
+      bcrypt
+        .compare(password, company.password)
+
+        .then((isSamePassword) => {
+          if (!isSamePassword) {
+            return res
+              .status(400)
+              .render("index", { errorMessage: "Wrong credentials" });
+          }
+          req.session.company = company;
+          console.log(company);
+          // req.session.user = user._id ! better and safer but in this case we saving the entire user object
+          return res.redirect("/companyLanding");
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+      // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
+      // you can just as easily run the res.status that is commented out below
+      next(err);
+      // return res.status(500).render("login", { errorMessage: err.message });
+    });
+});
+
+// logout
 
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
