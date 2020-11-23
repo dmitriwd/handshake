@@ -7,15 +7,16 @@ const companySchema = new Schema({
     unique: true,
     required: true,
   },
-  password: String,
+  password: {
+    type: String,
+    required: true,
+  },
 
   email: {
     type: String,
     unique: true,
     required: true,
   },
-
-  project: [{ type: Schema.Types.ObjectId, ref: "Project" }],
 
   location: {
     type: String,

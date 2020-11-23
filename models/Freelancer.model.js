@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-
+//username, password, email, location, description, skills, contact
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const freelancerSchema = new Schema({
   username: {
@@ -7,15 +7,16 @@ const freelancerSchema = new Schema({
     unique: true,
     required: true,
   },
-  password: String,
+  password: {
+    type: String,
+    required: true,
+  },
 
   email: {
     type: String,
     unique: true,
     required: true,
   },
-
-  project: [{ type: Schema.Types.ObjectId, ref: "Project" }],
 
   location: {
     type: String,

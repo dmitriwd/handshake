@@ -15,6 +15,81 @@ const Freelancer = require("../models/Freelancer.model");
 const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
+// get and post routes for company signup
+
+router.get("/company/signup", shouldNotBeLoggedIn, (req, res) => {
+  res.render("auth/company/signup");
+});
+
+router.post("/company/signup", shouldNotBeLoggedIn, (req, res) => {
+  const {
+    username,
+    password,
+    email,
+    location,
+    businessSector,
+    description,
+    address,
+    contact,
+  } = req.body;
+
+  if (!username || !email || !location || !contact) {
+    return res.status(400).render("auth/company/signup", {
+      errorMessage: "Please provide requiered fields",
+    });
+  }
+  if (password.length < 8) {
+    return res.status(400).render("auth/company/signup", {
+      errorMessage: "Your password needs to be at least 8 characters",
+    });
+  }
+  Company.findOne({ username }).then((found) => {
+    if (found) {
+      return res.status(400).render("auth/company/signup", {
+        errorMessage: "Username already taken",
+      });
+    }
+    return bcrypt
+      .genSalt(saltRounds)
+      .then((salt) => bcrypt.hash(password, salt))
+      .then((hashedPassword) => {
+        return Company.create({
+          username,
+          password: hashedPassword,
+          email,
+          location,
+          businessSector,
+          description,
+          address,
+          contact,
+        });
+      })
+      .then((company) => {
+        // binds the user to the session object
+        req.session.company = company;
+        res.redirect("/");
+      })
+      .catch((error) => {
+        if (error instanceof mongoose.Error.ValidationError) {
+          return res
+            .status(400)
+            .render("auth/company/signup", { errorMessage: error.message });
+        }
+        if (error.code === 11000) {
+          return res.status(400).render("auth/company/signup", {
+            errorMessage:
+              "Username need to be unique. THe username you chose is already in used.",
+          });
+        }
+        return res
+          .status(500)
+          .render("auth/company/signup", { errorMessage: error.message });
+      });
+  });
+});
+
+// freelancer get and post signup routes
+
 router.get("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
   res.render("auth/freelancer/signup");
 });
@@ -30,9 +105,9 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
     contact,
   } = req.body;
 
-  if (!username || !email || !location || !description || !skills || !contact) {
+  if (!username || !email || !location || !skills || !contact) {
     return res.status(400).render("auth/freelancer/signup", {
-      errorMessage: "Please provide your username",
+      errorMessage: "Please provide requiered fields",
     });
   }
   if (password.length < 8) {
@@ -63,94 +138,29 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
       .then((freelancer) => {
         // binds the user to the session object
         req.session.freelancer = freelancer;
+        console.log(freelancer);
         res.redirect("/");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
           return res
             .status(400)
-            .render("signup", { errorMessage: error.message });
+            .render("freelancer/signup", { errorMessage: error.message });
         }
         if (error.code === 11000) {
-          return res.status(400).render("signup", {
+          return res.status(400).render("freelancer/signup", {
             errorMessage:
               "Username need to be unique. THe username you chose is already in used.",
           });
         }
         return res
           .status(500)
-          .render("signup", { errorMessage: error.message });
+          .render("freelancer/signup", { errorMessage: error.message });
       });
   });
 });
 
-router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
-  const { username, password } = req.body;
-
-  if (!username) {
-    return res
-      .status(400)
-      .render("signup", { errorMessage: "Please provide your username" });
-  }
-
-  if (password.length < 8) {
-    return res.status(400).render("signup", {
-      errorMessage: "Your password needs to be at least 8 characters",
-    });
-  }
-
-  //   ! This use case is using a regular expression to control for special characters and min length
-  /*
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-
-  if (!regex.test(password)) {
-    return res.status(400).render("signup", {
-      errorMessage:
-        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
-    });
-  }
-
-  */
-
-  // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
-    if (found) {
-      return res
-        .status(400)
-        .render("signup", { errorMessage: "Username already taken" });
-    }
-    return bcrypt
-      .genSalt(saltRounds)
-      .then((salt) => bcrypt.hash(password, salt))
-      .then((hashedPassword) => {
-        return User.create({
-          username,
-          password: hashedPassword,
-        });
-      })
-      .then((user) => {
-        // binds the user to the session object
-        req.session.user = user;
-        res.redirect("/");
-      })
-      .catch((error) => {
-        if (error instanceof mongoose.Error.ValidationError) {
-          return res
-            .status(400)
-            .render("signup", { errorMessage: error.message });
-        }
-        if (error.code === 11000) {
-          return res.status(400).render("signup", {
-            errorMessage:
-              "Username need to be unique. THe username you chose is already in used.",
-          });
-        }
-        return res
-          .status(500)
-          .render("signup", { errorMessage: error.message });
-      });
-  });
-});
+// end of signup of company and freelancer
 
 router.get("/login", shouldNotBeLoggedIn, (req, res) => {
   res.render("auth/login");
