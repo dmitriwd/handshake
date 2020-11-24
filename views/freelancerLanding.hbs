@@ -8,7 +8,11 @@
 <p>My skills: {{freelancer.skills}}</p>
 <p>My description: {{freelancer.description}}</p>
 
-<h2>My applications: {{project.applications}}</h2>
+<h2>My applications:</h2>
+{{#each myApliedProjects}}
+<p>{{name}}</p>
+{{/each}}
+
 
 
 <h2>Check out Projects below</h2>

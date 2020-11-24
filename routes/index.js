@@ -33,8 +33,8 @@ router.get("/freelancerLanding", isFreelancer, (req, res, next) => {
       myApliedProjects,
     });
   });
-  //res.render("freelancerLanding", { freelancer });
 });
+//res.render("freelancerLanding", { freelancer }
 
 router.get("/companyLanding", isCompany, (req, res, next) => {
   const company = req.session.company;
