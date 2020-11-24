@@ -140,7 +140,7 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
         // binds the user to the session object
         req.session.freelancer = freelancer;
         console.log(freelancer);
-        res.redirect("/");
+        return res.redirect("/freelancerLanding");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
