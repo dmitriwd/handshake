@@ -5,7 +5,7 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
 const router = express.Router();
 const mongoose = require("mongoose");
-// const Project = require("../models/Project.model");
+const Project = require("../models/Project.model");
 
 //route to create project
 router.get("/project", isCompany, (req, res) => {
@@ -16,26 +16,39 @@ router.get("/project", isCompany, (req, res) => {
 //route to change profile
 router.get("/profile", isCompany, (req, res) => {
   const company = req.session.company;
-  res.render("new-project", { company });
+  res.render("company-profile", { company });
 });
 //post adding route
-//BELOW CODE DOES NOT WORK
-// router.post("/:id/addPost", isCompany, (req, res) => {
-//   //create new post code
-//   // console.log(req.body);
-//   const { name, skillsRequired, salary, description, contractType } = req.body;
-//   const { id } = req.params;
-//   Project.create({
-//     body,
-//     project: id,
-//     author: req.session.comp,
-//   })
-//     .then((projectFromDB) =>
-//       console.log(`New book created: ${projectFromDB.author}.`)
-//     )
-//     .catch((error) => `Error while creating a new book: ${error}`);
-// });
-// const company = req.session.company;
-// res.render("new-project", { company });
+
+router.post("/addPost", isCompany, (req, res) => {
+  //console.log(req.body);
+  //console.log(req.session.company);
+  const {
+    when,
+    name,
+    skillsRequired,
+    salary,
+    description,
+    summary,
+    contractType,
+  } = req.body;
+  const { _id } = req.session.company;
+  Project.create({
+    when,
+    name,
+    skillsRequired,
+    salary,
+    description,
+    summary,
+    contractType,
+    author: _id,
+  })
+    .then((createdProject) => {
+      res.redirect("/companyLanding");
+      //if we render here we will only be able to display on rendered page this one created just now project
+      //res.render("companyLanding", { createdProject });
+    })
+    .catch((error) => `Error while creating a new book: ${error}`);
+});
 
 module.exports = router;

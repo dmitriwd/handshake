@@ -30,6 +30,10 @@ app.use("/auth", authRoutes);
 const compRoutes = require("./routes/company");
 app.use("/company", compRoutes);
 
+//freelancer routes
+const freeRoutes = require("./routes/freelancer");
+app.use("/freelancer", freeRoutes);
+
 // ❗ To handle errors. Routes that dont exist or errors that you handle in specfic routes
 require("./error-handling")(app);
 

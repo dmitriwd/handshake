@@ -10,3 +10,18 @@
 
 
 <h2>Check out Projects below</h2>
+
+<button>
+  <a href="/freelancer/profile">Update profile</a>
+</button>
+
+{{#each foundProjects}}
+<div>
+  <p>{{name}}</p>
+  <p>{{skillsRequired}}</p>
+  <p>{{contractType}}</p>
+  <p>{{salary}}</p>
+  <p>{{description}}</p>
+</div>
+<p>{{name}}</p>
+{{/each}}

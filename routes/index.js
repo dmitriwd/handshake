@@ -3,6 +3,7 @@ const isCompany = require("../middlewares/isCompany");
 const isFreelancer = require("../middlewares/isFreelancer");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
+const Project = require("../models/Project.model");
 const router = express.Router();
 
 /* GET home page */
@@ -17,12 +18,21 @@ router.get("/login", shouldNotBeLoggedIn, (req, res, next) => {
 });
 
 router.get("/freelancerLanding", isFreelancer, (req, res, next) => {
+  //we will need to access data of all posts here to pass on freelancingLanding
   const freelancer = req.session.freelancer;
-  res.render("freelancerLanding", { freelancer });
+
+  Project.find().then((foundProjects) => {
+    res.render("freelancerLanding", { freelancer, foundProjects });
+  });
+
+  //res.render("freelancerLanding", { freelancer });
 });
 
 router.get("/companyLanding", isCompany, (req, res, next) => {
   const company = req.session.company;
-  res.render("companyLanding", { company });
+  Project.find({ author: company._id }).then((companyProjects) => {
+    res.render("companyLanding", { company, companyProjects });
+  });
 });
+
 module.exports = router;

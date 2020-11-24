@@ -3,12 +3,6 @@ module.exports = (req, res, next) => {
   if (!req.session.freelancer && !req.session.company) {
     return res.redirect("/login");
   }
-  // if (
-  //   (!req.session.freelancer && req.session.company) ||
-  //   (req.session.freelancer && !req.session.company)
-  // ) {
-  //   return res.redirect("/login");
-  // }
 
   next();
 };
