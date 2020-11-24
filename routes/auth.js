@@ -16,7 +16,6 @@ const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 
 // get and post routes for company signup
-
 router.get("/company/signup", shouldNotBeLoggedIn, (req, res) => {
   res.render("auth/company/signup");
 });
@@ -216,7 +215,6 @@ router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
 
 // login company
 router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
-  //console.log("Another console.log");
   const { username, password } = req.body;
 
   if (!username) {
@@ -225,13 +223,13 @@ router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
     });
   }
 
-  //   * Here we use the same logic as above - either length based parameters or we check the strength of a password
+  //   * we check the strength of a password
   if (password.length < 8) {
     return res.status(400).render("index", {
       errorMessage: "Your password needs to be at least 8 characters",
     });
   }
-  console.log("A String in console.log");
+  //console.log("A String in console.log");
   Company.findOne({ username })
     .then((company) => {
       if (!company) {
@@ -267,12 +265,14 @@ router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
 // logout
 
 router.get("/logout", isLoggedIn, (req, res) => {
+  console.log("HEY THERE");
   req.session.destroy((err) => {
     if (err) {
       return res
         .status(500)
         .render("auth/logout", { errorMessage: err.message });
     }
+    res.clearCookie("connect.sid");
     res.redirect("/");
   });
 });
