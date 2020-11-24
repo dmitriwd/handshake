@@ -21,11 +21,20 @@ router.get("/freelancerLanding", isFreelancer, (req, res, next) => {
   //we will need to access data of all posts here to pass on freelancingLanding
   const freelancer = req.session.freelancer;
   //try to display post
+
   Project.find().then((foundProjects) => {
-    res.render("freelancerLanding", { freelancer, foundProjects });
+    const myApliedProjects = foundProjects.filter((el) => {
+      return el.applications.includes(freelancer._id);
+    });
+    console.log(foundProjects);
+    res.render("freelancerLanding", {
+      freelancer,
+      foundProjects,
+      myApliedProjects,
+    });
   });
-  //res.render("freelancerLanding", { freelancer });
 });
+//res.render("freelancerLanding", { freelancer }
 
 router.get("/companyLanding", isCompany, (req, res, next) => {
   const company = req.session.company;
