@@ -17,10 +17,12 @@ router.get("/login", shouldNotBeLoggedIn, (req, res, next) => {
 });
 
 router.get("/freelancerLanding", isFreelancer, (req, res, next) => {
-  res.render("freelancerLanding");
+  const freelancer = req.session.freelancer;
+  res.render("freelancerLanding", { freelancer });
 });
 
 router.get("/companyLanding", isCompany, (req, res, next) => {
-  res.render("companyLanding");
+  const company = req.session.company;
+  res.render("companyLanding", { company });
 });
 module.exports = router;
