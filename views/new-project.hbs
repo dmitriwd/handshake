@@ -1,0 +1,58 @@
+<h2>
+  Hi {{company.username}}!
+</h2>
+
+<h3>Post your new project here:</h3>
+<form action="/company/addPost" method="POST">
+  <label for="author">Company</label>
+  <br>
+  <input type="text" id="author" name="author" placeholder={{company.username}}>
+  <br>
+  <label for="name">Project name</label>
+  <input type="text" id="name" name="name">
+  <br>
+  <label for="contractType">Contract type</label>
+  <input type="text" id="contractType" name="contractType">
+  <br>
+  <label for="salary">Salary</label>
+  <input type="text" id="salary" name="salary">
+  <br>
+  <div>
+    <p>Skills</p>
+    <input type="checkbox" id="Junior Front End Developer" name="skillsRequired" value="Junior Front End Developer">
+    <label for="Junior Front End Developer">Junior Front End Developer</label><br>
+
+    <input type="checkbox" id="Front End Developer" name="skillsRequired" value="Front End Developer">
+    <label for="Front End Developer">Front End Developer</label><br>
+
+    <input type="checkbox" id="Junior Full Stack Developer" name="skillsRequired" value="Junior Full Stack Developer">
+    <label for="Junior Full Stack Developer">Junior Full Stack Developer</label><br>
+
+    <input type="checkbox" id="Full Stack Developer" name="skillsRequired" value="Full Stack Developer">
+    <label for="Full Stack Developer">Full Stack Developer</label><br>
+
+    <input type="checkbox" id="Back End Developer" name="skillsRequired" value="Back End Developer">
+    <label for="Back End Developer">Back End Developer</label><br>
+
+    <input type="checkbox" id="Junior IT Security Engnineer" name="skillsRequired" value="Junior IT Security Engnineer">
+    <label for="Front End Developer">Junior IT Security Engineer</label><br>
+
+    <input type="checkbox" id="IT Security Engineer" name="skillsRequired" value="IT Security Engineer">
+    <label for="IT Security Engineer">IT Security Engineer</label><br>
+
+    <input type="checkbox" id="Junior UX/UI Designer" name="skillsRequired" value="Junior UX/UI Designer">
+    <label for="Junior UX/UI Designer"> Junior UX/UI Designer</label><br>
+
+    <input type="checkbox" id="UX/UI Designer" name="skillsRequired" value="UX/UI Designer">
+    <label for="UX/UI Designer"> UX/UI Designer</label><br>
+  </div>
+  <br>
+  <label for="summary">Summary</label>
+  <input type="text" id="summary" name="summary">
+  <br>
+  <label for="description">Description</label>
+  <textarea row="10" cols="30" id="description" name="description"></textarea>
+  <br>
+
+  <button type="submit">Submit</button>
+</form>

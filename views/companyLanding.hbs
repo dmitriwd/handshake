@@ -1,5 +1,6 @@
 <h1>Company Landing</h1>
 
+<<<<<<< HEAD
 
 {{!-- {{#if company}} --}}
 
@@ -8,3 +9,31 @@
 
 
 {{!-- {{/if}} --}}
+=======
+<h2>
+  Hi {{company.username}}
+</h2>
+
+<p>My email: {{company.email}}</p>
+<p>My location: {{company.location}}</p>
+<p>My address: {{company.address}}</p>
+<p>My contact: {{company.contact}}</p>
+<p>My Business Sector: {{company.businessSector}}</p>
+<p>My description {{company.description}}</p>
+
+<button>
+  <a href="/company/project">Create a Project</a>
+</button>
+
+<button>
+  <a href="/company/profile">Update profile</a>
+</button>
+
+{{#each companyProjects}}
+<p>{{name}}</p>
+<form action="/company/deletePost/{{_id}}" method="POST">
+  <button type="submit" id="delete">Delete Project
+  </button>
+</form>
+{{/each}}
+>>>>>>> 17107c06c81b748f5493dbbac2be8940dec4766f
