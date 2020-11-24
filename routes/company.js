@@ -6,6 +6,7 @@ const shouldNotBeLoggedIn = require("../middlewares/shouldNotBeLoggedIn");
 const router = express.Router();
 const mongoose = require("mongoose");
 const Project = require("../models/Project.model");
+const { render } = require("../app");
 
 //route to create project
 router.get("/project", isCompany, (req, res) => {
@@ -49,6 +50,14 @@ router.post("/addPost", isCompany, (req, res) => {
       //res.render("companyLanding", { createdProject });
     })
     .catch((error) => `Error while creating a new book: ${error}`);
+});
+
+//delete post route
+router.post("/deletePost/:_id", isCompany, (req, res) => {
+  const { _id } = req.params;
+  Project.findByIdAndDelete(_id).then(() => {
+    res.redirect("/companyLanding");
+  });
 });
 
 module.exports = router;

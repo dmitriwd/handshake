@@ -21,4 +21,8 @@
 
 {{#each companyProjects}}
 <p>{{name}}</p>
+<form action="/company/deletePost/{{_id}}" method="POST">
+  <button type="submit" id="delete">Delete Project
+  </button>
+</form>
 {{/each}}

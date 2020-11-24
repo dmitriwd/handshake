@@ -20,11 +20,10 @@ router.get("/login", shouldNotBeLoggedIn, (req, res, next) => {
 router.get("/freelancerLanding", isFreelancer, (req, res, next) => {
   //we will need to access data of all posts here to pass on freelancingLanding
   const freelancer = req.session.freelancer;
-
+  //try to display post
   Project.find().then((foundProjects) => {
     res.render("freelancerLanding", { freelancer, foundProjects });
   });
-
   //res.render("freelancerLanding", { freelancer });
 });
 

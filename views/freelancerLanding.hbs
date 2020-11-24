@@ -8,6 +8,8 @@
 <p>My skills: {{freelancer.skills}}</p>
 <p>My description: {{freelancer.description}}</p>
 
+<h2>My applications: {{project.applications}}</h2>
+
 
 <h2>Check out Projects below</h2>
 
@@ -23,5 +25,8 @@
   <p>{{salary}}</p>
   <p>{{description}}</p>
 </div>
-<p>{{name}}</p>
+<button type="submit">
+  <a href="/freelancer/apply/{{_id}}">See more and apply</a>
+</button>
+
 {{/each}}
