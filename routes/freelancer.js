@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const Project = require("../models/Project.model");
 // const Project = require("../models/Project.model");
 
-//route to apply frender post page with apply
+//route to apply freelancer post page with apply
 router.get("/apply/:_id", isFreelancer, (req, res) => {
   const { _id } = req.params;
   Project.findById(_id).then((foundP) => {
