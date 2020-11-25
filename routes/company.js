@@ -67,5 +67,18 @@ router.post("/deletePost/:_id", isCompany, (req, res) => {
     res.redirect("/companyLanding");
   });
 });
+//added on Tuesday - Gosia
+//route render post page to see who applied
+//TO CHANGE SHOWS LOTS OF STRANGE EMPTY PROJECTS
+router.get("/specProject/:_id", isCompany, (req, res) => {
+  const { _id } = req.params;
+  Project.findById(_id)
+    .populate("applications")
+    .then((foundP) => {
+      //console.log(req.params);
+      console.log(foundP);
+      res.render("companySpecProj", { project: foundP });
+    });
+});
 
 module.exports = router;
