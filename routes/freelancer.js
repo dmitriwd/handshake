@@ -59,58 +59,6 @@ router.post("/profile/update/:_id", isFreelancer, (req, res) => {
       res.redirect("/freelancer/profile");
     }
   );
-  /* 
-  {
-    username:^"",
-    location: "¨barcelona"
-  }
-
-  if (req.body["username"]) -> req.body.username
-  if (req.body.username) {
-    sanitize.username = req.body.username - DOES NOT HAPPEN BECAUSE USERNaME Is EMPTY
-  }
-
-  if (req.body["¨location"]) -> req.body.location
-  if (req.body.location) {
-    sanitizie.location = req.body.location
-  }
-
-  sanitize = {location :"barcelona"}
-  */
-  // Freelancer.findById(id, function (err, foundObject) {
-  //   if (err) {
-  //     console.log(err);
-  //     res.status(500).send();
-  //   } else {
-  //     if (!foundObject) {
-  //       res.status(404).send();
-  //     } else {
-  //       if (req.body.username) {
-  //         foundObject.username = req.body.username;
-  //       }
-  //       if (req.body.location) {
-  //         foundObject.location = req.body.location;
-  //       }
-  //       if (req.body.contact) {
-  //         foundObject.contact = req.body.contact;
-  //       }
-  //       if (req.body.skills) {
-  //         foundObject.skills = req.body.skills;
-  //       }
-  //       if (req.body.description) {
-  //         foundObject.description = req.body.description;
-  //       }
-  //       foundObject.save(function (err, updatedObject) {
-  //         if (err) {
-  //           console.log(err);
-  //           res.status(500).send();
-  //         } else {
-  //           res.send(updatedObject);
-  //         }
-  //       });
-  //     }
-  //   }
-  // });
 });
 
 module.exports = router;
