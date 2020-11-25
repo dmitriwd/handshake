@@ -1,0 +1,20 @@
+{{!-- added Tuesday - Gosia --}}
+<h1>Speciffic project to see who applied</h1>
+
+<div>
+  {{#each project}}
+  <p>Project name: {{name}}</p>
+  <p>Required skills: {{skillsRequired}}</p>
+  <p>Contract Type: {{contractType}}</p>
+  <p>Salary {{salary}}</p>
+  <p>Project summary: {{summary}}</p>
+  <p>Project description: {{name}}</p>
+  <br>
+  <p>Applicants:</p>
+  <p>Name: {{applications.0.username}}</p>
+  <p>Skills: {{applications.0.skills}}</p>
+  <p>Location: {{applications.0.location}}</p>
+  <p>Description: {{applications.0.description}}</p>
+  <p>Contact: {{applications.0.contact}}</p>
+  {{/each}}
+</div>

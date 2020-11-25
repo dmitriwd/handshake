@@ -10,7 +10,8 @@
 
 <h2>My applications:</h2>
 {{#each myApliedProjects}}
-<p>{{name}}</p>
+<p>Project title: {{name}}</p>
+<p>Description: {{description}}</p>
 {{/each}}
 
 
@@ -23,11 +24,11 @@
 
 {{#each foundProjects}}
 <div>
-  <p>{{name}}</p>
-  <p>{{skillsRequired}}</p>
-  <p>{{contractType}}</p>
-  <p>{{salary}}</p>
-  <p>{{description}}</p>
+  <p>Project name: {{name}}</p>
+  <p>Skills required: {{skillsRequired}}</p>
+  <p>Contract type: {{contractType}}</p>
+  <p>Salary: {{salary}}</p>
+  <p>Project summary: {{summary}}</p>
 </div>
 <button type="submit">
   <a href="/freelancer/apply/{{_id}}">See more and apply</a>

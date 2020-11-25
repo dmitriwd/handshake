@@ -20,9 +20,14 @@
 </button>
 
 {{#each companyProjects}}
-<p>{{name}}</p>
+<p>Project name: {{name}}</p>
+<p>Project summary: {{summary}}</p>
 <form action="/company/deletePost/{{_id}}" method="POST">
   <button type="submit" id="delete">Delete Project
   </button>
 </form>
+{{!-- added Tuesday - Gosia--}}
+<button type="submit">
+  <a href="/company/specProject/{{_id}}">See who applied</a>
+</button>
 {{/each}}
