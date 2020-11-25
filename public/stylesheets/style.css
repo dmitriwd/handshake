@@ -1,5 +1,24 @@
+/* OUR FONTS
+font-family: 'Indie Flower', cursive;
+font-family: 'Nunito', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+/* OUR COLORS
+main light yellow : #fff8cd
+30% gray #646464
+10% orange #ff9642
+and bright yellow if we want #ffe05d */
+
 * {
   background-color: #fff8cd;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
