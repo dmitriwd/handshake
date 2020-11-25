@@ -52,6 +52,14 @@ router.post("/addPost", isCompany, (req, res) => {
     .catch((error) => `Error while creating a new book: ${error}`);
 });
 
+//company route to get the profile page:
+
+//route to change profile
+router.get("/profile/update", isCompany, (req, res) => {
+  const company = req.session.company;
+  res.render("company-profile-update", { company });
+});
+
 //delete post route
 router.post("/deletePost/:_id", isCompany, (req, res) => {
   const { _id } = req.params;
