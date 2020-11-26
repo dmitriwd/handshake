@@ -34,6 +34,7 @@ h2 {
   font-size: 35px;
 }
 
+/* Gosias CSS BELOW */
 .title {
   font-family: "Roboto", sans-serif;
   color: #ff9642;
@@ -43,6 +44,15 @@ h2 {
   height: 80px;
   margin-left: 20px;
   /* background-color: #646464; */
+}
+#logoCredentials {
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 10px;
+}
+
+#logoLink {
+  text-decoration: none;
 }
 
 .nav-bar-alone {
@@ -138,6 +148,37 @@ h2 {
 #freelancerapply {
   padding: 10px;
 }
+
+.index-text {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.index-phrase {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #ff9642;
+}
+
+.index-signup-buttons {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+}
+
+#index-speciffic-signin {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#index-logout {
+  visibility: hidden;
+}
+/* end of Gosia's css */
 
 /* ALEX's css */
 /* 

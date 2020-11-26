@@ -13,18 +13,20 @@
   <br>
   <br>
   {{!-- <div class="project-box"> --}}
-  <p> <strong class="title"> My location: </strong> {{freelancer.location}}</p>
+  <div id="profile-box">
+    <p> <strong class="title"> My location: </strong> {{freelancer.location}}</p>
+    <br>
+    <p> <strong class="title">My contact information:</strong> {{freelancer.contact}}</p>
+    <br>
+    <p> <strong class="title"> My skills: </strong> {{freelancer.skills}}</p>
+    <br>
+    <p> <strong class="title"> My description: </strong> {{freelancer.description}}</p>
+  </div>
   <br>
-  <p> <strong class="title">My contact information:</strong> {{freelancer.contact}}</p>
-  <br>
-  <p> <strong class="title"> My skills: </strong> {{freelancer.skills}}</p>
-  <br>
-  <p> <strong class="title"> My description: </strong> {{freelancer.description}}</p>
-  <br>
+
   <div class="buttons-inside-project"></div>
   <button class="create-project">
     <a class="create-project" href="/freelancer/profile/update">Update profile</a>
   </button>
 </div>
-{{!-- </div> --}}
 </div>
