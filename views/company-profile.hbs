@@ -1,3 +1,24 @@
+<nav class="nav-bar">
+  <img id="logo" src="/images/logo.jpg" alt="handshake logo">
+  <ul class="nav-bar-ul">
+    <li><a href="/companyLanding">Home</a></li>
+    <li><a href="/company/profile">My profile</a></li>
+    <li><a href="/auth/logout">Log Out</a></li>
+  </ul>
+</nav>
+<h1>Company Profile</h1>
+
 <h2>
-  Hi {{company.username}} change you profile here
+  Hi {{company.username}}
 </h2>
+
+<p>My email: {{company.email}}</p>
+<p>My location: {{company.location}}</p>
+<p>My address: {{company.address}}</p>
+<p>My contact: {{company.contact}}</p>
+<p>My Business Sector: {{company.businessSector}}</p>
+<p>My description {{company.description}}</p>
+
+<button>
+  <a href="/company/profile/update">Update your Profile</a>
+</button>

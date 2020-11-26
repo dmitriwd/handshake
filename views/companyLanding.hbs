@@ -1,4 +1,14 @@
+<nav class="nav-bar">
+  <img id="logo" src="/images/logo.jpg" alt="handshake logo">
+  <ul class="nav-bar-ul">
+    <li><a href="/companyLanding">Home</a></li>
+    <li><a href="/company/profile">My profile</a></li>
+    <li><a href="/auth/logout">Log Out</a></li>
+  </ul>
+</nav>
 <h1>Company Landing</h1>
+<h3>HANDSHAKE</h3>
+
 
 
 {{!-- {{#if company}} --}}
@@ -12,24 +22,17 @@
   Hi {{company.username}}
 </h2>
 
-<p>My email: {{company.email}}</p>
-<p>My location: {{company.location}}</p>
-<p>My address: {{company.address}}</p>
-<p>My contact: {{company.contact}}</p>
-<p>My Business Sector: {{company.businessSector}}</p>
-<p>My description {{company.description}}</p>
 
 <button>
   <a href="/company/project">Create a Project</a>
 </button>
 
-<button>
-  <a href="/company/profile">Update profile</a>
-</button>
+
 
 {{#each companyProjects}}
 <p>Project name: {{name}}</p>
 <p>Project summary: {{summary}}</p>
+{{!-- <p>Post date: {{when}}</p> --}}
 <form action="/company/deletePost/{{_id}}" method="POST">
   <button type="submit" id="delete">Delete Project
   </button>

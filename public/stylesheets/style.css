@@ -9,8 +9,13 @@ main light yellow : #fff8cd
 10% orange #ff9642
 and bright yellow if we want #ffe05d */
 
+/* belowe code is what we were advised always to start with so there are no white borders around pages viwes */
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: #fff8cd;
+  color: #646464;
 }
 
 body {
@@ -27,4 +32,51 @@ h1 {
 
 h2 {
   font-size: 22;
+}
+
+#logo {
+  height: 80px;
+  margin-left: 20px;
+  /* background-color: #646464; */
+}
+
+.nav-bar-alone {
+  height: 80px;
+  background-color: #646464;
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-bar {
+  height: 80px;
+  background-color: #646464;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar-ul {
+  margin: 0;
+  display: flex;
+  background-color: #646464;
+}
+.nav-bar-ul li {
+  list-style: none;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: right;
+  background-color: #646464;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #646464;
+  text-align: right;
+  float: right;
+  color: #ff9642;
 }

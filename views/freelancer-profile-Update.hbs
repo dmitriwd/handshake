@@ -1,0 +1,62 @@
+<nav class="nav-bar">
+  <img id="logo" src="/images/logo.jpg" alt="handshake logo">
+  <ul class="nav-bar-ul">
+    <li><a href="/freelancerLanding">Home</a></li>
+    <li><a href="/freelancer/profile">Profile</a></li>
+    <li><a href="/auth/logout">Logout</a></li>
+  </ul>
+</nav>
+<h1>Hi freelancer profile</h1>
+
+<h2>
+  Hi {{freelancer.username}}
+</h2>
+
+
+<p>My description: {{freelancer.username}}</p>
+
+<form action="/freelancer/profile/update/{{freelancer._id}}" method="POST">
+  <label for="username">username</label>
+  <input type="text" id="username" name="username" value="{{freelancer.username}}">
+  <br>
+  <label for="location">location</label>
+  <input type="location" id="location" name="location" value="{{freelancer.location}}">
+  <br>
+  <label for="contact">contact</label>
+  <input type="contact" id="contact" name="contact" value="{{freelancer.contact}}">
+  <br>
+  <div>
+    <p>Skills</p>
+    <input type="checkbox" id="Junior Front End Developer" name="skills" value="Junior Front End Developer">
+    <label for="Junior Front End Developer">Junior Front End Developer</label><br>
+
+    <input type="checkbox" id="Front End Developer" name="skills" value="Front End Developer">
+    <label for="Front End Developer">Front End Developer</label><br>
+
+    <input type="checkbox" id="Junior Full Stack Developer" name="skills" value="Junior Full Stack Developer">
+    <label for="Junior Full Stack Developer">Junior Full Stack Developer</label><br>
+
+    <input type="checkbox" id="Full Stack Developer" name="skills" value="Full Stack Developer">
+    <label for="Full Stack Developer">Full Stack Developer</label><br>
+
+    <input type="checkbox" id="Back End Developer" name="skills" value="Back End Developer">
+    <label for="Back End Developer">Back End Developer</label><br>
+
+    <input type="checkbox" id="Junior IT Security Engnineer" name="skills" value="Junior IT Security Engnineer">
+    <label for="Front End Developer">Junior IT Security Engineer</label><br>
+
+    <input type="checkbox" id="IT Security Engineer" name="skills" value="IT Security Engineer">
+    <label for="IT Security Engineer">IT Security Engineer</label><br>
+
+    <input type="checkbox" id="Junior UX/UI Designer" name="skills" value="Junior UX/UI Designer">
+    <label for="Junior UX/UI Designer"> Junior UX/UI Designer</label><br>
+
+    <input type="checkbox" id="UX/UI Designer" name="skills" value="UX/UI Designer">
+    <label for="UX/UI Designer"> UX/UI Designer</label><br>
+  </div>
+  <br>
+  <label for="description">description</label>
+  <textarea row="10" cols="30" id="description" name="description" value="{{freelancer.description}}"></textarea>
+  <br>
+  <button type="submit">Submit</button>
+</form>

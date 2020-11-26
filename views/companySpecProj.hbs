@@ -1,20 +1,30 @@
-{{!-- added Tuesday - Gosia --}}
+<nav class="nav-bar">
+  <img id="logo" src="/images/logo.jpg" alt="handshake logo">
+  <ul class="nav-bar-ul">
+    <li><a href="/companyLanding">Home</a></li>
+    <li><a href="/company/profile">My profile</a></li>
+    <li><a href="/auth/logout">Log Out</a></li>
+  </ul>
+</nav>
+
 <h1>Speciffic project to see who applied</h1>
 
-<div>
-  {{#each project}}
-  <p>Project name: {{name}}</p>
-  <p>Required skills: {{skillsRequired}}</p>
-  <p>Contract Type: {{contractType}}</p>
-  <p>Salary {{salary}}</p>
-  <p>Project summary: {{summary}}</p>
-  <p>Project description: {{name}}</p>
-  <br>
-  <p>Applicants:</p>
-  <p>Name: {{applications.0.username}}</p>
-  <p>Skills: {{applications.0.skills}}</p>
-  <p>Location: {{applications.0.location}}</p>
-  <p>Description: {{applications.0.description}}</p>
-  <p>Contact: {{applications.0.contact}}</p>
-  {{/each}}
-</div>
+<p>Project name: {{project.name}}</p>
+<p>Required skills: {{project.skillsRequired}}</p>
+<p>Contract Type: {{project.contractType}}</p>
+<p>Salary {{project.salary}}</p>
+<p>Project summary: {{project.summary}}</p>
+<p>Project description: {{project.description}}</p>
+<br>
+<p>Applicants:</p>
+
+{{#each project.applications}}
+{{!-- {{this.username}} --}}
+<h4>{{username}}</h4>
+<p>Location: {{location}}</p>
+<p>Description: {{description}}</p>npr
+<p>Contact: {{contact}}</p>
+{{#each skills}}
+<p>Skills {{this}}</p>
+{{/each}}
+{{/each}}

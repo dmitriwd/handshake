@@ -1,0 +1,42 @@
+<nav class="nav-bar">
+  <img id="logo" src="/images/logo.jpg" alt="handshake logo">
+  <ul class="nav-bar-ul">
+    <li><a href="/companyLanding">Home</a></li>
+    <li><a href="/company/profile">My profile</a></li>
+    <li><a href="/auth/logout">Log Out</a></li>
+  </ul>
+</nav>
+
+<h1>Hi {{company.username}}! Update yout profile here!</h1>
+
+
+<form action="/company/profile/update/{{company._id}}" method="POST">
+  <label for="username">username</label>
+  <input type="text" id="username" name="username" value="{{company.username}}">
+  <br>
+  <label for="location">Location</label>
+  <input type="location" id="location" name="location" value="{{company.location}}">
+  <br>
+
+  <label for="address">Address</label>
+  <input type="address" id="address" name="address" value="{{company.address}}">
+  <br>
+
+  <label for="contact">contact</label>
+  <input type="contact" id="contact" name="contact" value="{{company.contact}}">
+  <br>
+
+
+  <label for="businessSector">Business Sector</label>
+  <input type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
+
+  <br>
+  <label for="description">description</label>
+  <textarea row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
+
+  <br>
+
+  <br>
+
+  <button type="submit">Submit</button>
+</form>
