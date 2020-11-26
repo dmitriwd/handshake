@@ -9,6 +9,12 @@ const router = express.Router();
 /* GET home page */
 router.get("/", (req, res, next) => {
   console.log(req.session);
+  if (req.session.freelancer) {
+    return res.redirect("/freelancerLanding");
+  }
+  if (req.session.company) {
+    return res.redirect("/companyLanding");
+  }
   res.render("index");
 });
 

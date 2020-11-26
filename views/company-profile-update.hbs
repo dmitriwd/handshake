@@ -6,37 +6,38 @@
     <li><a href="/auth/logout">Log Out</a></li>
   </ul>
 </nav>
+<br>
+<h1 id='h1Signup'>Hi {{company.username}}!<br> Update yout profile here!</h1>
 
-<h1>Hi {{company.username}}! Update yout profile here!</h1>
+<div class='signup'>
+  <form action="/company/profile/update/{{company._id}}" method="POST">
+    <span class='basicform'>
+      <label for="Username">username</label>
+      <input type="text" id="username" name="username" value="{{company.username}}">
+    </span>
+    <span class='basicform'>
+      <label for="Location">Location</label>
+      <input type="location" id="location" name="location" value="{{company.location}}">
+    </span>
+    <span class='basicform'>
+      <label for="Address">Address</label>
+      <input type="address" id="address" name="address" value="{{company.address}}">
+    </span>
+    <span class='basicform'>
+      <label for="Contact">contact</label>
+      <input type="contact" id="contact" name="contact" value="{{company.contact}}">
+    </span>
+    <span class='basicform'>
+      <label for="BusinessSector">Business Sector</label>
+      <input type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
+    </span>
+    <span class='basicform'>
+      <label for="Description">description</label>
+      <textarea row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
+    </span>
+    <div class='submitbutton'>
+      <button type="submit">Submit</button>
+    </div>
 
-
-<form action="/company/profile/update/{{company._id}}" method="POST">
-  <label for="username">username</label>
-  <input type="text" id="username" name="username" value="{{company.username}}">
-  <br>
-  <label for="location">Location</label>
-  <input type="location" id="location" name="location" value="{{company.location}}">
-  <br>
-
-  <label for="address">Address</label>
-  <input type="address" id="address" name="address" value="{{company.address}}">
-  <br>
-
-  <label for="contact">contact</label>
-  <input type="contact" id="contact" name="contact" value="{{company.contact}}">
-  <br>
-
-
-  <label for="businessSector">Business Sector</label>
-  <input type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
-
-  <br>
-  <label for="description">description</label>
-  <textarea row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
-
-  <br>
-
-  <br>
-
-  <button type="submit">Submit</button>
-</form>
+  </form>
+</div>
