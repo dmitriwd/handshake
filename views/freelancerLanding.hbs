@@ -7,9 +7,7 @@
   </ul>
 </nav>
 <br>
-
 <div class="page-layout">
-
   <h1>
     Hi, {{freelancer.username}}
   </h1>
@@ -24,11 +22,8 @@
   </div>
   <br>
   {{/each}}
-
   <br>
   <br>
-
-
   <h2>Check out projects below</h2>
   <br>
   {{#each foundProjects}}
@@ -38,12 +33,10 @@
     <p> <strong class="title">Contract type: </strong> {{contractType}}</p>
     <p> <strong class="title">Salary:</strong> {{salary}}</p>
     <p> <strong class="title">Project summary: </strong> {{summary}}</p>
-
     <div class="buttons-inside-project">
       <button class="create-project" type="submit">
         <a class="create-project" href="/freelancer/apply/{{_id}}">See more and apply</a>
       </button>
-
     </div>
   </div>
   <br>

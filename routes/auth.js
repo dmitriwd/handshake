@@ -160,9 +160,8 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
       });
   });
 });
-
 // end of signup of company and freelancer
-///auth/freelancer/login
+
 // login freelancer
 router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
   console.log("Another console.log");
@@ -263,7 +262,6 @@ router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
 });
 
 // logout
-
 router.get("/logout", isLoggedIn, (req, res) => {
   console.log("HEY THERE");
   req.session.destroy((err) => {
