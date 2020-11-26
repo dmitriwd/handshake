@@ -9,39 +9,40 @@
 
 <div class="page-layout">
   <br>
-<br>
-<h2>Applicants for Our Projects</h2>
-<br>
+  <br>
+  <h2>Applicants for Our Projects</h2>
+  <br>
 
-<div class="project-box">
-<div>
-<h2>Project</h2>
+  <div class="project-box">
+    <div>
+      <h2>Project</h2>
 
-<p><span class="title">Project Name:</span> {{project.name}}</p>
-<p><span class="title">Required Skills:</span> {{project.skillsRequired}}</p>
-<p><span class="title">Contract Type:</span> {{project.contractType}}</p>
-<p><span class="title">Salary: </span>{{project.salary}}</p>
-<p><span class="title">Project Summary:</span> {{project.summary}}</p>
-<p><span class="title">Project Description:</span> {{project.description}}</p>
-<br>
-</div>
+      <p><span class="title">Project Name:</span> {{project.name}}</p>
+      <p><span class="title">Required Skills:</span> {{project.skillsRequired}}</p>
+      <p><span class="title">Contract Type:</span> {{project.contractType}}</p>
+      <p><span class="title">Salary: </span>{{project.salary}}</p>
+      <p><span class="title">Project Summary:</span> {{project.summary}}</p>
+      <p><span class="title">Project Description:</span> {{project.description}}</p>
+      <br>
+    </div>
 
-<div class="applicants">
-<h2>Applicants</h2>
-{{#each project.applications}}
-{{!-- {{this.username}} --}}
-<div class="applicant-box">
-<h3><span class="title">{{username}}</span></h3>
-<p><span class="title">Location: </span>{{location}}</p>
-<p><span class="title">Description:</span> {{description}}</p>
-<p><span class="title">Contact:</span> {{contact}}</p>
-{{#each skills}}
-<p><span class="title">Skills </span>{{this}}</p>
-{{/each}}
-{{/each}}
-</div>
-</div>
+    <div class="applicants">
+      <h2>Applicants</h2>
+      {{#each project.applications}}
+      {{!-- {{this.username}} --}}
+      <div class="applicant-box">
+        <h3><span class="title">{{username}}</span></h3>
+        <p><span class="title">Location: </span>{{location}}</p>
+
+        <p><span class="title">Contact:</span> {{contact}}</p>
+        {{#each skills}}
+        <p><span class="title">Skills </span>{{this}}</p>
+        {{/each}}
+        <p><span class="title">Description:</span> {{description}}</p>
+        {{/each}}
+      </div>
+    </div>
 
 
-</div>
-<div>
+  </div>
+  <div>
