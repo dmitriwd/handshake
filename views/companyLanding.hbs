@@ -6,31 +6,42 @@
     <li><a href="/auth/logout">Log Out</a></li>
   </ul>
 </nav>
-<h1>Company Landing</h1>
-<h3>HANDSHAKE</h3>
+<br>
 
+<div class="page-layout">
+  <h1>
+    Hi, {{company.username}}
+  </h1>
+  <br>
+  <br>
 
-<h2>
-  Hi {{company.username}}
-</h2>
-
-
-<button>
-  <a href="/company/project">Create a Project</a>
-</button>
-
-
-
-{{#each companyProjects}}
-<p>Project name: {{name}}</p>
-<p>Project summary: {{summary}}</p>
-{{!-- <p>Post date: {{when}}</p> --}}
-<form action="/company/deletePost/{{_id}}" method="POST">
-  <button type="submit" id="delete">Delete Project
+  <button class="new-project-button">
+    <a class="new-project-button" href="/company/project">Create a New Project</a>
   </button>
-</form>
-{{!-- added Tuesday - Gosia--}}
-<button type="submit">
-  <a href="/company/specProject/{{_id}}">See who applied</a>
-</button>
-{{/each}}
+  <br>
+  <br>
+
+  <h2>Your current projects</h2>
+  <br>
+
+  {{#each companyProjects}}
+  <div class="project-box">
+    <p> <strong class="title">Project name:</strong> {{name}}</p>
+
+    <p><strong class="title">Project summary:</strong> <br> {{summary}}</p>
+    {{!-- <p>Post date: {{when}}</p> --}}
+
+    <div class="buttons-inside-project">
+      <form class="create-project" action="/company/deletePost/{{_id}}" method="POST">
+        <button class="create-project" type="submit" id="delete">Delete Project
+        </button>
+      </form>
+
+      <button class="create-project" type="submit">
+        <a class="create-project" href="/company/specProject/{{_id}}">See who applied</a>
+      </button>
+    </div>
+  </div>
+  <br>
+  {{/each}}
+</div>

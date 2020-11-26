@@ -6,10 +6,24 @@
     <li><a href="/auth/logout">Logout</a></li>
   </ul>
 </nav>
-<h1>Apply page</h1>
 
-{{project.name}}
+<br>
+<div class="page-layout">
 
-<form action="/freelancer/apply/{{project._id}}" method="POST">
-  <button>Apply</button>
-</form>
+
+  <h1>Apply here</h1>
+  <br>
+  <br>
+  <div class="project-box">
+    <p> <strong class="title">Project name: </strong> {{project.name}}</p>
+    <p> <strong class="title"> Skills required: </strong> {{project.skillsRequired}}</p>
+    <p> <strong class="title">Contract type: </strong> {{project.contractType}}</p>
+    <p> <strong class="title">Salary:</strong> {{project.salary}}</p>
+    <p> <strong class="title">Project summary: </strong> {{project.summary}}</p>
+    <p> <strong class="title">Project description: </strong> {{project.description}}</p>
+
+    <form action="/freelancer/apply/{{project._id}}" method="POST">
+      <button class="create-project">Apply</button>
+    </form>
+  </div>
+</div>
