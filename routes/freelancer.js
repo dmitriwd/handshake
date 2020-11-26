@@ -40,10 +40,8 @@ router.get("/profile/update", isFreelancer, (req, res) => {
   res.render("freelancer-profile-Update", { freelancer });
 });
 
-// request to /freelancer/update/:_id
-// id = :_id
-// freelancer {_id:^_id}
 //route to change profile
+// request to /freelancer/update/:_id
 router.post("/profile/update/:_id", isFreelancer, (req, res) => {
   const { _id } = req.params;
   const sanitize = {};

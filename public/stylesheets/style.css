@@ -14,9 +14,8 @@ and bright yellow if we want #ffe05d */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-* {
   background-color: #fff8cd;
+  color: #646464;
 }
 
 body {
@@ -36,22 +35,22 @@ h2 {
 }
 
 #logo {
-  height: 70px;
-  padding-left: 20px;
-  background-color: #646464;
+  height: 80px;
+  margin-left: 20px;
+  /* background-color: #646464; */
 }
 
 .nav-bar-alone {
-  height: 70px;
+  height: 80px;
   background-color: #646464;
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
 .nav-bar {
-  height: 70px;
+  height: 80px;
   background-color: #646464;
   margin: 0;
   display: flex;
