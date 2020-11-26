@@ -22,7 +22,7 @@
     <p> <strong class="title">Project summary: </strong> {{project.summary}}</p>
     <p> <strong class="title">Project description: </strong> {{project.description}}</p>
 
-    <form action="/freelancer/apply/{{project._id}}" method="POST">
+    <form id="freelancerapply" action="/freelancer/apply/{{project._id}}" method="POST">
       <button class="create-project">Apply</button>
     </form>
   </div>

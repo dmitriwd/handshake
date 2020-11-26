@@ -134,3 +134,156 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+#freelancerapply {
+  padding: 10px;
+}
+
+/* ALEX's css */
+/* 
+.signup {
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  margin-top: 1cm;
+  align-content: center;
+}
+#h1Signup {
+  display: flex;
+  justify-content: center;
+  margin-top: 3cm;
+  font-size: 8rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 950px;
+  height: 1200px;
+  align-items: center;
+  margin-top: 1cm;
+}
+span.basicform {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+}
+.basicform > label {
+  display: flex;
+  width: 250px;
+  justify-content: center;
+  flex-flow: row wrap;
+  margin-right: 0.65cm;
+}
+.basicform > input {
+  display: flex;
+  width: 650px;
+  height: 50px;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+textarea {
+  width: 650px;
+}
+.submitbutton {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  margin-left: 4cm;
+  margin-top: 2cm;
+}
+.enterButton {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 8%;
+  padding: 2px 10px 2px 10px;
+  background-color: #FF9642;
+  color: #646464;
+  font-weight: 900;
+  outline-color: #646464;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+span.checkbox {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+}
+.checkbox > label {
+  display: flex;
+  width: 500px;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  align-content: center;
+}
+.checkbox > input {
+  display: flex;
+  width: 150px;
+  justify-content: center;
+  flex-flow: row wrap;
+  height: 60px;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2cm;
+}
+.skills {
+  border: 5px navy;
+  margin-top: 2cm;
+  margin-left: 3cm;
+  margin-bottom: 2cm;
+}
+.h1login {
+  display: flex;
+  justify-content: center;
+  margin-top: 3cm;
+  font-size: 8rem;
+}
+.h3login {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+}
+.form {
+  padding: 200px;
+  border: #FF9642;
+}
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.formlogin {
+  display: flex;
+  justify-content: flex-start;
+}
+.formlogin > span {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 4rem;
+  margin-top: 5cm;
+  justify-content: space-around;
+}
+.formlogin > span > input {
+  height: 2cm;
+  width: 15cm;
+  margin-left: 1cm;
+  font-size: 4rem;
+}
+.formlogin > span > button {
+  font-size: 5rem;
+  padding: 5px 7px;
+  display: flex;
+  text-decoration: none;
+  background-color: #FF9642;
+  text-align: right;
+  float: right;
+  color: #646464;
+  outline-color: none;
+  border: none;
+  border-radius: 8%;
+} */
