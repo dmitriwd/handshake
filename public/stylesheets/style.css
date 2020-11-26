@@ -9,11 +9,13 @@ main light yellow : #fff8cd
 10% orange #ff9642
 and bright yellow if we want #ffe05d */
 
+/* belowe code is what we were advised always to start with so there are no white borders around pages viwes */
 * {
-  background-color: #fff8cd;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #fff8cd;
+  color: #646464;
 }
 
 body {
@@ -29,8 +31,116 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 35px;
 }
+
+.title {
+  font-family: "Roboto", sans-serif;
+  color: #ff9642;
+}
+
+#logo {
+  height: 80px;
+  margin-left: 20px;
+  /* background-color: #646464; */
+}
+
+.nav-bar-alone {
+  height: 80px;
+  background-color: #646464;
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.nav-bar {
+  height: 80px;
+  background-color: #646464;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar-ul {
+  margin: 0;
+  display: flex;
+  background-color: #646464;
+}
+.nav-bar-ul li {
+  list-style: none;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: right;
+  background-color: #646464;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: #646464;
+  text-align: right;
+  float: right;
+  color: #ff9642;
+}
+
+.create-project {
+  padding: 2px 6px 2px 6px;
+  display: flex;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background-color: #ff9642;
+  text-align: right;
+  float: right;
+  color: #646464;
+  outline-color: none;
+  border: none;
+  border-radius: 8%;
+}
+
+.buttons-inside-project {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.new-project-button {
+  padding: 5px 7px;
+  display: flex;
+  text-decoration: none;
+  font-size: 1.1rem;
+  background-color: #ff9642;
+  text-align: right;
+  float: right;
+  color: #646464;
+  outline-color: none;
+  border: none;
+  border-radius: 8%;
+}
+
+.project-box {
+  border: solid;
+  border-color: #ff9642;
+  width: 40vw;
+  border-width: thin;
+  padding: 20px;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#freelancerapply {
+  padding: 10px;
+}
+
+/* ALEX's css */
+
 .signup {
   display: flex;
   font-size: 2rem;
@@ -41,11 +151,9 @@ h2 {
 #h1Signup {
   display: flex;
   justify-content: center;
-
   margin-top: 3cm;
   font-size: 8rem;
 }
-
 form {
   display: flex;
   flex-direction: column;
@@ -85,7 +193,6 @@ textarea {
   margin-left: 4cm;
   margin-top: 2cm;
 }
-
 .enterButton {
   display: flex;
   justify-content: center;
@@ -112,13 +219,11 @@ span.checkbox {
   flex-flow: row wrap;
   align-content: center;
 }
-
 .checkbox > input {
   display: flex;
   width: 150px;
   justify-content: center;
   flex-flow: row wrap;
-
   height: 60px;
 }
 h3 {
@@ -132,46 +237,37 @@ h3 {
   margin-left: 3cm;
   margin-bottom: 2cm;
 }
-
 .h1login {
   display: flex;
   justify-content: center;
   margin-top: 3cm;
   font-size: 8rem;
 }
-
 .h3login {
   display: flex;
   justify-content: center;
   font-size: 5rem;
 }
-
 .form {
   padding: 200px;
   border: #ff9642;
 }
-
 .login {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
 .formlogin {
   display: flex;
   justify-content: flex-start;
 }
-
 .formlogin > span {
   display: flex;
   flex-flow: row nowrap;
   font-size: 4rem;
-
   margin-top: 5cm;
-
   justify-content: space-around;
 }
-
 .formlogin > span > input {
   height: 2cm;
   width: 15cm;
@@ -183,7 +279,6 @@ h3 {
   padding: 5px 7px;
   display: flex;
   text-decoration: none;
-
   background-color: #ff9642;
   text-align: right;
   float: right;

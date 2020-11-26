@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const Project = require("../models/Project.model");
 const Freelancer = require("../models/Freelancer.model");
 
-//route to render job post page to see detail and apply
+//route to apply freelancer post page with apply
 router.get("/apply/:_id", isFreelancer, (req, res) => {
   const { _id } = req.params;
   Project.findById(_id).then((foundP) => {
@@ -40,10 +40,8 @@ router.get("/profile/update", isFreelancer, (req, res) => {
   res.render("freelancer-profile-Update", { freelancer });
 });
 
-// request to /freelancer/update/:_id
-// id = :_id
-// freelancer {_id:^_id}
 //route to change profile
+// request to /freelancer/update/:_id
 router.post("/profile/update/:_id", isFreelancer, (req, res) => {
   const { _id } = req.params;
   const sanitize = {};
@@ -59,58 +57,6 @@ router.post("/profile/update/:_id", isFreelancer, (req, res) => {
       res.redirect("/freelancer/profile");
     }
   );
-  /* 
-  {
-    username:^"",
-    location: "¨barcelona"
-  }
-
-  if (req.body["username"]) -> req.body.username
-  if (req.body.username) {
-    sanitize.username = req.body.username - DOES NOT HAPPEN BECAUSE USERNaME Is EMPTY
-  }
-
-  if (req.body["¨location"]) -> req.body.location
-  if (req.body.location) {
-    sanitizie.location = req.body.location
-  }
-
-  sanitize = {location :"barcelona"}
-  */
-  // Freelancer.findById(id, function (err, foundObject) {
-  //   if (err) {
-  //     console.log(err);
-  //     res.status(500).send();
-  //   } else {
-  //     if (!foundObject) {
-  //       res.status(404).send();
-  //     } else {
-  //       if (req.body.username) {
-  //         foundObject.username = req.body.username;
-  //       }
-  //       if (req.body.location) {
-  //         foundObject.location = req.body.location;
-  //       }
-  //       if (req.body.contact) {
-  //         foundObject.contact = req.body.contact;
-  //       }
-  //       if (req.body.skills) {
-  //         foundObject.skills = req.body.skills;
-  //       }
-  //       if (req.body.description) {
-  //         foundObject.description = req.body.description;
-  //       }
-  //       foundObject.save(function (err, updatedObject) {
-  //         if (err) {
-  //           console.log(err);
-  //           res.status(500).send();
-  //         } else {
-  //           res.send(updatedObject);
-  //         }
-  //       });
-  //     }
-  //   }
-  // });
 });
 
 module.exports = router;

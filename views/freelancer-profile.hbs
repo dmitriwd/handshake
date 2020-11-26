@@ -1,21 +1,30 @@
 <nav class="nav-bar">
+  <img id="logo" src="/images/logo.jpg" alt="handshake logo">
   <ul class="nav-bar-ul">
     <li><a href="/freelancerLanding">Home</a></li>
     <li><a href="/freelancer/profile">Profile</a></li>
     <li><a href="/auth/logout">Logout</a></li>
+  </ul>
 </nav>
+<br>
 
-
-<h1>Landing</h1>
-
-<h2>
-  Hi {{freelancer.username}}
-</h2>
-<p>My location: {{freelancer.location}}</p>
-<p>My contact information:{{freelancer.contact}}</p>
-<p>My skills: {{freelancer.skills}}</p>
-<p>My description: {{freelancer.description}}</p>
-
-<button>
-  <a href="/freelancer/profile/update">Update profile</a>
-</button>
+<div class="page-layout">
+  <h1> Hi, {{freelancer.username}} </h1>
+  <br>
+  <br>
+  {{!-- <div class="project-box"> --}}
+  <p> <strong class="title"> My location: </strong> {{freelancer.location}}</p>
+  <br>
+  <p> <strong class="title">My contact information:</strong> {{freelancer.contact}}</p>
+  <br>
+  <p> <strong class="title"> My skills: </strong> {{freelancer.skills}}</p>
+  <br>
+  <p> <strong class="title"> My description: </strong> {{freelancer.description}}</p>
+  <br>
+  <div class="buttons-inside-project"></div>
+  <button class="create-project">
+    <a class="create-project" href="/freelancer/profile/update">Update profile</a>
+  </button>
+</div>
+{{!-- </div> --}}
+</div>
