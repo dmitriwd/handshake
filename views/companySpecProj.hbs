@@ -39,6 +39,16 @@
         <p><span class="title">Skills </span>{{this}}</p>
         {{/each}}
         <p><span class="title">Description:</span> {{description}}</p>
+
+        {{!-- added now by Gosia route for speciffic freelancer --}}
+        <div class="buttons-inside-project">
+          <form class="create-project" action="/freelancer/profile/{{_id}}" method="GET">
+            <button class="create-project" type="submit" id="delete">See applicant's profile
+            </button>
+          </form>
+        </div>
+        <br>
+        <br>
         {{/each}}
       </div>
     </div>

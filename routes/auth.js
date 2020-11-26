@@ -33,13 +33,13 @@ router.post("/company/signup", shouldNotBeLoggedIn, (req, res) => {
   } = req.body;
 
   if (!username || !email || !location || !contact) {
-    console.log("HELP?");
+    //console.log("HELP?");
     return res.status(400).render("auth/company/signup", {
       errorMessage: "Please provide requiered fields",
     });
   }
   if (password.length < 8) {
-    console.log("PASSORD?");
+    //console.log("PASSORD?");
     return res.status(400).render("auth/company/signup", {
       errorMessage: "Your password needs to be at least 8 characters",
     });
@@ -139,7 +139,7 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
       .then((freelancer) => {
         // binds the user to the session object
         req.session.freelancer = freelancer;
-        console.log(freelancer);
+        //console.log(freelancer);
         return res.redirect("/freelancerLanding");
       })
       .catch((error) => {
@@ -164,7 +164,7 @@ router.post("/freelancer/signup", shouldNotBeLoggedIn, (req, res) => {
 
 // login freelancer
 router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
-  console.log("Another console.log");
+  //console.log("Another console.log");
   const { username, password } = req.body;
 
   if (!username) {
@@ -179,7 +179,7 @@ router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
       errorMessage: "Your password needs to be at least 8 characters",
     });
   }
-  console.log("A String in console.log");
+  //console.log("A String in console.log");
   Freelancer.findOne({ username })
     .then((freelancer) => {
       if (!freelancer) {
@@ -204,7 +204,7 @@ router.post("/freelancer/login", shouldNotBeLoggedIn, (req, res) => {
         });
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
       // in this case we are sending the error handling to the error handling middleware that is defined in the error handling file
       // you can just as easily run the res.status that is commented out below
       next(err);
@@ -247,7 +247,7 @@ router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
               .render("index", { errorMessage: "Wrong credentials" });
           }
           req.session.company = company;
-          console.log(company);
+          //console.log(company);
           // req.session.user = user._id ! better and safer but in this case we saving the entire user object
           return res.redirect("/companyLanding");
         });
@@ -263,7 +263,7 @@ router.post("/company/login", shouldNotBeLoggedIn, (req, res) => {
 
 // logout
 router.get("/logout", isLoggedIn, (req, res) => {
-  console.log("HEY THERE");
+  // console.log("HEY THERE");
   req.session.destroy((err) => {
     if (err) {
       return res
