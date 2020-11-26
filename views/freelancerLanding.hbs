@@ -6,6 +6,7 @@
     <li><a href="/auth/logout">Logout</a></li>
   </ul>
 </nav>
+<<<<<<< HEAD
 <h1>Landing</h1>
 
 <<<<<<< HEAD
@@ -21,13 +22,42 @@
 <p>Project title: {{name}}</p>
 <p>Description: {{description}}</p>
 {{/each}}
-
+=======
 <br>
-<br>
+>>>>>>> dev
+
+<div class="page-layout">
+
+  <h1>
+    Hi, {{freelancer.username}}
+  </h1>
+  <br>
+  <br>
+  <h2>My applications</h2>
+  <br>
+  {{#each myApliedProjects}}
+  <div class="project-box">
+    <p> <strong class="title"> Project name: </strong> {{name}}</p>
+    <p> <strong class="title"> Description: </strong> {{description}}</p>
+  </div>
+  <br>
+  {{/each}}
+
+  <br>
+  <br>
 
 
-<h2>Check out Projects below</h2>
+  <h2>Check out projects below</h2>
+  <br>
+  {{#each foundProjects}}
+  <div class="project-box">
+    <p> <strong class="title">Project name: </strong> {{name}}</p>
+    <p> <strong class="title"> Skills required: </strong> {{skillsRequired}}</p>
+    <p> <strong class="title">Contract type: </strong> {{contractType}}</p>
+    <p> <strong class="title">Salary:</strong> {{salary}}</p>
+    <p> <strong class="title">Project summary: </strong> {{summary}}</p>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <button>  
   <a href="/freelancer/profile">Update profile</a>
@@ -48,3 +78,15 @@
 </button>
 
 {{/each}}
+=======
+    <div class="buttons-inside-project">
+      <button class="create-project" type="submit">
+        <a class="create-project" href="/freelancer/apply/{{_id}}">See more and apply</a>
+      </button>
+
+    </div>
+  </div>
+  <br>
+  {{/each}}
+</div>
+>>>>>>> dev
