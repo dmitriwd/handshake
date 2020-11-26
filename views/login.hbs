@@ -1,25 +1,41 @@
-<h1>Hi Login</h1>
-<h3>Freelancers login here:</h3>
-<form action="/auth/freelancer/login" method="POST">
-  <label for="username">username</label>
-  <input type="text" id="username" name="username">
-  <label for="password">password</label>
-  <input type="password" id="password" name="password">
+<h1 class='h1login'>Please Login here:</h1>
 
-  <button type="submit">Submit</button>
-</form>
+<div class='login'>
+  <div class='form'>
+    <h3 class='h3login'>Freelancers login here:</h3>
+    <form class='formlogin' action="/auth/freelancer/login" method="POST">
+      <span>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+      </span>
+      <span>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+      </span>
+      <span>
+        <button class='enterButton' type="submit">Login</button>
+      </span>
+    </form>
+  </div>
 
 
-<h3>Companies login here:</h3>
-<form action="/auth/company/login" method="POST">
-  <label for="username">username</label>
-  <input type="text" id="username" name="username">
-  <label for="password">password</label>
-  <input type="password" id="password" name="password">
-
-  <button type="submit">Submit</button>
-</form>
-
+  <div class='form'>
+    <h3 class='h3login'>Companies login here:</h3>
+    <form class='formlogin' action="/auth/company/login" method="POST">
+      <span>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+      </span>
+      <span>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+      </span>
+      <span>
+        <button class='enterButton' type="submit">Login</button>
+      </span>
+    </form>
+  </div>
+</div>
 {{#if errorMessage}}
 <h3 style="color:red">{{errorMessage}}</h3>
 {{/if}}
