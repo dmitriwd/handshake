@@ -134,3 +134,23 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+.checkboxes {
+  padding-left: 10px;
+}
+.input {
+  background-color: #fff8cd;
+  border: solid 1px;
+  margin-bottom: 8px;
+}
+
+.profile-details {
+  text-align: left;
+}
+
+.profile-details-name {
+  color: #ff9642;
+}
+
+.applicant-box {
+}

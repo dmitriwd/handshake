@@ -7,24 +7,41 @@
   </ul>
 </nav>
 
-<h1>Speciffic project to see who applied</h1>
-
-<p>Project name: {{project.name}}</p>
-<p>Required skills: {{project.skillsRequired}}</p>
-<p>Contract Type: {{project.contractType}}</p>
-<p>Salary {{project.salary}}</p>
-<p>Project summary: {{project.summary}}</p>
-<p>Project description: {{project.description}}</p>
+<div class="page-layout">
+  <br>
 <br>
-<p>Applicants:</p>
+<h2>Applicants for Our Projects</h2>
+<br>
 
+<div class="project-box">
+<div>
+<h2>Project</h2>
+
+<p><span class="title">Project Name:</span> {{project.name}}</p>
+<p><span class="title">Required Skills:</span> {{project.skillsRequired}}</p>
+<p><span class="title">Contract Type:</span> {{project.contractType}}</p>
+<p><span class="title">Salary: </span>{{project.salary}}</p>
+<p><span class="title">Project Summary:</span> {{project.summary}}</p>
+<p><span class="title">Project Description:</span> {{project.description}}</p>
+<br>
+</div>
+
+<div class="applicants">
+<h2>Applicants</h2>
 {{#each project.applications}}
 {{!-- {{this.username}} --}}
-<h4>{{username}}</h4>
-<p>Location: {{location}}</p>
-<p>Description: {{description}}</p>npr
-<p>Contact: {{contact}}</p>
+<div class="applicant-box">
+<h3><span class="title">{{username}}</span></h3>
+<p><span class="title">Location: </span>{{location}}</p>
+<p><span class="title">Description:</span> {{description}}</p>
+<p><span class="title">Contact:</span> {{contact}}</p>
 {{#each skills}}
-<p>Skills {{this}}</p>
+<p><span class="title">Skills </span>{{this}}</p>
 {{/each}}
 {{/each}}
+</div>
+</div>
+
+
+</div>
+<div>

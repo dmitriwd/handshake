@@ -15,25 +15,11 @@
   <br>
   <br>
 
-<<<<<<< HEAD
-
-{{!-- {{#if company}} --}}
-
-  
-<h1>Welcome {{company.body.username}}! Ready for a new hire?</h1>
-
-
-{{!-- {{/if}} --}}
-<h2>
-  Hi {{company.username}}
-</h2>
-=======
   <button class="new-project-button">
     <a class="new-project-button" href="/company/project">Create a New Project</a>
   </button>
   <br>
   <br>
->>>>>>> dev
 
   <h2>Your current projects</h2>
   <br>
@@ -51,22 +37,6 @@
         </button>
       </form>
 
-<<<<<<< HEAD
-{{#each companyProjects}}
-<p>Project name: {{name}}</p>
-<p>Project summary: {{summary}}</p>
-{{!-- <p>Post date: {{when}}</p> --}}
-<form action="/company/deletePost/{{_id}}" method="POST">
-  <button type="submit" id="delete">Delete Project
-  </button>
-</form>
-{{/each}}
-{{!-- added Tuesday - Gosia--}}
-<button type="submit">
-  <a href="/company/specProject/{{_id}}">See who applied</a>
-</button>
-{{/each}}
-=======
       <button class="create-project" type="submit">
         <a class="create-project" href="/company/specProject/{{_id}}">See who applied</a>
       </button>
@@ -75,4 +45,3 @@
   <br>
   {{/each}}
 </div>
->>>>>>> dev

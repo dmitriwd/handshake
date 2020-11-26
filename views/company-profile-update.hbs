@@ -7,36 +7,47 @@
   </ul>
 </nav>
 
-<h1>Hi {{company.username}}! Update yout profile here!</h1>
-
-
-<form action="/company/profile/update/{{company._id}}" method="POST">
-  <label for="username">username</label>
-  <input type="text" id="username" name="username" value="{{company.username}}">
+<div class="page-layout">
   <br>
-  <label for="location">Location</label>
-  <input type="location" id="location" name="location" value="{{company.location}}">
+<h1>
+  Hello, {{company.username}}
+</h1>
+<br>
+<h2>Update Profile</h2>
+<br>
+<br>
+
+<div class="profile-details">
+<form  action="/company/profile/update/{{company._id}}" method="POST">
+  <label class="title" for="username">Username</label>
+  <input class="input" type="text" id="username" name="username" value="{{company.username}}">
+  <br>
+  <br>
+  <label class="title" for="location">Location</label>
+  <input class="input" type="location" id="location" name="location" value="{{company.location}}">
+  <br>
+<br>
+  <label class="title" for="address">Address</label>
+  <input class="input" type="address" id="address" name="address" value="{{company.address}}">
+  <br>
+<br>
+  <label class="title" for="contact">Contact</label>
+  <input class="input" type="contact" id="contact" name="contact" value="{{company.contact}}">
+  <br>
+<br>
+
+  <label class="title" for="businessSector">Business Sector</label>
+  <input class="input" type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
+<br>
+  <br>
+  <label class="title" for="description">Description</label>
+  <textarea class="input" row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
+<br>
   <br>
 
-  <label for="address">Address</label>
-  <input type="address" id="address" name="address" value="{{company.address}}">
   <br>
 
-  <label for="contact">contact</label>
-  <input type="contact" id="contact" name="contact" value="{{company.contact}}">
-  <br>
-
-
-  <label for="businessSector">Business Sector</label>
-  <input type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
-
-  <br>
-  <label for="description">description</label>
-  <textarea row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
-
-  <br>
-
-  <br>
-
-  <button type="submit">Submit</button>
+  <button class="create-project" type="submit">Submit</button>
 </form>
+<div>
+  </div>

@@ -6,65 +6,24 @@
     <li><a href="/auth/logout">Logout</a></li>
   </ul>
 </nav>
-<<<<<<< HEAD
 <h1>Landing</h1>
 
-<<<<<<< HEAD
-
-=======
 <h2>
   Hi {{freelancer.username}}
 </h2>
 <br>
->>>>>>> dev
 <h2>My applications:</h2>
 {{#each myApliedProjects}}
 <p>Project title: {{name}}</p>
 <p>Description: {{description}}</p>
 {{/each}}
-=======
+
 <br>
->>>>>>> dev
-
-<div class="page-layout">
-
-  <h1>
-    Hi, {{freelancer.username}}
-  </h1>
-  <br>
-  <br>
-  <h2>My applications</h2>
-  <br>
-  {{#each myApliedProjects}}
-  <div class="project-box">
-    <p> <strong class="title"> Project name: </strong> {{name}}</p>
-    <p> <strong class="title"> Description: </strong> {{description}}</p>
-  </div>
-  <br>
-  {{/each}}
-
-  <br>
-  <br>
+<br>
 
 
-  <h2>Check out projects below</h2>
-  <br>
-  {{#each foundProjects}}
-  <div class="project-box">
-    <p> <strong class="title">Project name: </strong> {{name}}</p>
-    <p> <strong class="title"> Skills required: </strong> {{skillsRequired}}</p>
-    <p> <strong class="title">Contract type: </strong> {{contractType}}</p>
-    <p> <strong class="title">Salary:</strong> {{salary}}</p>
-    <p> <strong class="title">Project summary: </strong> {{summary}}</p>
+<h2>Check out Projects below</h2>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<button>  
-  <a href="/freelancer/profile">Update profile</a>
-</button>
-
-=======
->>>>>>> dev
 {{#each foundProjects}}
 <div>
   <p>Project name: {{name}}</p>
@@ -78,15 +37,3 @@
 </button>
 
 {{/each}}
-=======
-    <div class="buttons-inside-project">
-      <button class="create-project" type="submit">
-        <a class="create-project" href="/freelancer/apply/{{_id}}">See more and apply</a>
-      </button>
-
-    </div>
-  </div>
-  <br>
-  {{/each}}
-</div>
->>>>>>> dev
