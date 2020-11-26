@@ -24,6 +24,7 @@
 {{#each companyProjects}}
 <p>Project name: {{name}}</p>
 <p>Project summary: {{summary}}</p>
+{{!-- <p>Post date: {{when}}</p> --}}
 <form action="/company/deletePost/{{_id}}" method="POST">
   <button type="submit" id="delete">Delete Project
   </button>
