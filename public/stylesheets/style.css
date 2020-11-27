@@ -220,10 +220,11 @@ form {
 span.basicform {
   display: flex;
   flex-flow: row nowrap;
+  margin-bottom: 0.1cm;
 }
 .basicform > label {
   display: flex;
-  width: 8vw;
+  width: 10vw;
   justify-content: flex-end;
   align-items: center;
   flex-flow: row wrap;
@@ -232,7 +233,7 @@ span.basicform {
 }
 .basicform > input {
   display: flex;
-  width: 30vw;
+  width: 20vw;
   height: 20px;
   justify-content: center;
   flex-flow: row wrap;
@@ -242,7 +243,7 @@ span.basicform {
   font-size: 0.9rem;
 }
 textarea {
-  width: 30vw;
+  width: 20vw;
 }
 .submitbutton {
   display: flex;
