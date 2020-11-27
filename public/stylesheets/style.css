@@ -386,3 +386,7 @@ h3 {
   border: none;
   border-radius: 8%;
 }
+
+#profile-box {
+  max-width: 40vw;
+}
