@@ -7,37 +7,40 @@
   </ul>
 </nav>
 <br>
-<h1 id='h1Signup'>Hi {{company.username}}!<br> Update yout profile here!</h1>
+<h1 id='h1Signup'>Hi, {{company.username}}<br>
 
-<div class='signup'>
-  <form action="/company/profile/update/{{company._id}}" method="POST">
-    <span class='basicform'>
-      <label for="Username">username</label>
-      <input type="text" id="username" name="username" value="{{company.username}}">
-    </span>
-    <span class='basicform'>
-      <label for="Location">Location</label>
-      <input type="location" id="location" name="location" value="{{company.location}}">
-    </span>
-    <span class='basicform'>
-      <label for="Address">Address</label>
-      <input type="address" id="address" name="address" value="{{company.address}}">
-    </span>
-    <span class='basicform'>
-      <label for="Contact">contact</label>
-      <input type="contact" id="contact" name="contact" value="{{company.contact}}">
-    </span>
-    <span class='basicform'>
-      <label for="BusinessSector">Business Sector</label>
-      <input type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
-    </span>
-    <span class='basicform'>
-      <label for="Description">description</label>
-      <textarea row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
-    </span>
-    <div class='submitbutton'>
-      <button type="submit">Submit</button>
-    </div>
+  <h2 class='page-layout'>Update Your Profile</h2>
+  <br>
+  <br>
+  <div class='signup'>
+    <form action="/company/profile/update/{{company._id}}" method="POST">
+      <span class='basicform'>
+        <label class='title' for="Username">Username</label>
+        <input type="text" id="username" name="username" value="{{company.username}}">
+      </span>
+      <span class='basicform'>
+        <label class='title' for="Location">Location</label>
+        <input type="location" id="location" name="location" value="{{company.location}}">
+      </span>
+      <span class='basicform'>
+        <label class='title' for="Address">Address</label>
+        <input type="address" id="address" name="address" value="{{company.address}}">
+      </span>
+      <span class='basicform'>
+        <label class='title' for="Contact">Contact</label>
+        <input type="contact" id="contact" name="contact" value="{{company.contact}}">
+      </span>
+      <span class='basicform'>
+        <label class='title' for="BusinessSector">Business Sector</label>
+        <input type="businessSector" id="businessSector" name="businessSector" value="{{company.businessSector}}">
+      </span>
+      <span class='basicform'>
+        <label class='title' for="Description">Description</label>
+        <textarea row="10" cols="30" id="description" name="description" value="{{company.description}}"></textarea>
+      </span>
+      <div class='submitbutton'>
+        <button class="create-project" type="submit">Submit</button>
+      </div>
 
-  </form>
-</div>
+    </form>
+  </div>
